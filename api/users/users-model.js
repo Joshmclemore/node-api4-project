@@ -18,8 +18,9 @@ const addNewUser = ({ name, password }) => {
     return Promise.resolve(newUser)
 }
 
-// const checkLoginInfo = ({ name, password }) => {
-//     const user = users.find(user => user.username === username && user.password === password)
-// }
+const checkLoginInfo = ({ name, password }) => {
+    const user = users.find(user => user.name === name && user.password === password)
+    return Promise.resolve(user)
+}
 
-module.exports = { find, addNewUser };
+module.exports = { find, addNewUser, checkLoginInfo };
